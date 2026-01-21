@@ -43,8 +43,4 @@ projects.forEach(project => {
 });
 
 }
-
-
-
-
 getAllProjects()

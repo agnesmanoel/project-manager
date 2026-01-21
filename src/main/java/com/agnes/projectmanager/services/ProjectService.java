@@ -30,8 +30,8 @@ public class ProjectService {
     }
 
     public void save(ProjectDTO project){
-        ProjectValidator.validate(project);
         UserEntity userEntity = userRepository.findById(project.responsibleUser().id()).orElseThrow();
+        ProjectValidator.validate(project);        
         projectRepository.save(ProjectMapper.toEntity(project, userEntity));
     }
 

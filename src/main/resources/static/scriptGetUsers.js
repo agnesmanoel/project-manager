@@ -45,6 +45,5 @@ async function getAllUsers() {
 
 }
 
- 
 
 getAllUsers()

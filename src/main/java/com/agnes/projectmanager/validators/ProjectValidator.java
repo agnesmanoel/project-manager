@@ -3,6 +3,7 @@ package com.agnes.projectmanager.validators;
 import com.agnes.projectmanager.exceptions.ProjectNotValidException;
 import com.agnes.projectmanager.models.project.ProjectDTO;
 
+
 public class ProjectValidator {
 
     public static void validate(ProjectDTO project){
@@ -10,6 +11,11 @@ public class ProjectValidator {
         if(project.startDate().isAfter(project.finalDate())){
             throw new ProjectNotValidException("The start date cannot be after the end date.");
         }
+
+        if(project.responsibleUser() == null){
+            throw new ProjectNotValidException("The project must have a user");
+        }
+
 
         
 
