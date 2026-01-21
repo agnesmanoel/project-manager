@@ -40,4 +40,3 @@ projects.forEach(project => {
 
 
 getAllProjects()
-alert("oii")
