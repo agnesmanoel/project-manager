@@ -3,9 +3,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.agnes.projectmanager.exceptions.UserNotValidException;
 import com.agnes.projectmanager.mappers.UserMapper;
 import com.agnes.projectmanager.models.user.*;
-import com.agnes.projectmanager.repositories.UserRepository;;
+import com.agnes.projectmanager.repositories.UserRepository;
+import com.agnes.projectmanager.validators.UserValidator;;
 
 
 @Service
@@ -28,6 +30,7 @@ public class UserService {
     }
 
     public void save(UserDTO user){
+        UserValidator.validate(user);
         userRepository.save(UserMapper.toEntity(user));
 
     }
@@ -38,4 +41,3 @@ public class UserService {
     }
 
 }
-
