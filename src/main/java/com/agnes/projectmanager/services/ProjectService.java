@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.agnes.projectmanager.models.user.UserEntity;
 import com.agnes.projectmanager.repositories.ProjectRepository;
 import com.agnes.projectmanager.repositories.UserRepository;
+import com.agnes.projectmanager.validators.ProjectValidator;
 import com.agnes.projectmanager.mappers.ProjectMapper;
 import com.agnes.projectmanager.models.project.*;
 
@@ -29,6 +30,7 @@ public class ProjectService {
     }
 
     public void save(ProjectDTO project){
+        ProjectValidator.validate(project);
         UserEntity userEntity = userRepository.findById(project.responsibleUser().id()).orElseThrow();
         projectRepository.save(ProjectMapper.toEntity(project, userEntity));
     }
