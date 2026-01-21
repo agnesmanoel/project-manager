@@ -6,18 +6,11 @@ const selection = document.getElementById("userResponsibleSelection")
 async function saveProject(event) {
 
     event.preventDefault();
-
     const formData = new FormData(projectForms);
-
     const data = Object.fromEntries(formData.entries());
-
- 
-
+    
     data.responsibleUser = {id: Number(data.userResponsible)};
-
     delete data.userResponsible;
-
- 
 
     const response = await fetch("http://localhost:8080/projects", {
 
@@ -26,35 +19,31 @@ async function saveProject(event) {
             body: JSON.stringify(data)
         });
 
- 
 
-        if (!response.ok) {
-
-            alert(response.text())
-
+        if(!response.ok){
+            alert((await response.text()).toString())
         }
-
- 
-
 }
 
  
 
-async function populateSelect(){  
+async function populateSelect() {
+    const response = await fetch("http://localhost:8080/users");
+    const data = await response.json();
 
-    data.forEach(user =>{
+    if(!response.ok){
+        alert((await response.text()).toString())
+    }
 
-        const option = document.createElement('option')
-        option.value = user.id
-        option.textContent = user.userName
-        selection.appendChild(option)
 
-    })
-
+    data.forEach(user => {
+        const option = document.createElement('option');
+        option.value = user.id;
+        option.textContent = user.userName;
+        selection.appendChild(option);
+    });
 }
 
+populateSelect();
  
-
-populateSelect()
-
 projectForms.addEventListener("submit", saveProject);

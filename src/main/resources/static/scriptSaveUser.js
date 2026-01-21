@@ -18,10 +18,9 @@ async function saveUser(event) {
 
         });
 
-        if (!response.ok) {
-            alert(response.text())
-        } 
-
+        if(!response.ok){
+            alert((await response.text()).toString())
+        }
 }
 
 

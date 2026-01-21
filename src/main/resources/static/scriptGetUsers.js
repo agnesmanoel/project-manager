@@ -7,6 +7,10 @@ async function getAllUsers() {
     const response = await fetch("http://localhost:8080/users");
     const users = await response.json();
 
+    if(!response.ok){
+        alert((await response.text()).toString())
+    }
+
     users.forEach(user => {
 
         const div = document.createElement("div");
