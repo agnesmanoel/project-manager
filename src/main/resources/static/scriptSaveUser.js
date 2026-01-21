@@ -19,7 +19,11 @@ async function saveUser(event) {
         });
 
         if(!response.ok){
+            if(response.status == 400){
             alert((await response.text()).toString())
+            } else {
+                alert("Cannot save user. Check the input fields.")
+            }
         }
 }
 

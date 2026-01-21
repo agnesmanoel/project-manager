@@ -11,6 +11,14 @@ async function getAllUsers() {
         alert((await response.text()).toString())
     }
 
+    if(!response.ok){
+        if(response.status == 400){
+        alert((await response.text()).toString())
+        } else {
+            alert("Unable to load projects")
+        }
+    }
+
     users.forEach(user => {
 
         const div = document.createElement("div");
@@ -25,7 +33,7 @@ async function getAllUsers() {
         image.width = 100;
         image.height = 100;
 
- 
+        
 
         userName.innerText = "User name: " + user.userName;
         userNumber.innerText = "User number: " + user.userNumber;

@@ -19,9 +19,12 @@ async function saveProject(event) {
             body: JSON.stringify(data)
         });
 
-
         if(!response.ok){
+            if(response.status == 400){
             alert((await response.text()).toString())
+            } else {
+                alert("Cannot save project. Check the input fields.")
+            }
         }
 }
 
@@ -32,8 +35,13 @@ async function populateSelect() {
     const data = await response.json();
 
     if(!response.ok){
+        if(response.status == 400){
         alert((await response.text()).toString())
+        } else {
+            alert("Unable to load the Responsible user field.")
+        }
     }
+
 
 
     data.forEach(user => {
