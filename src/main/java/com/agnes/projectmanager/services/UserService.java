@@ -3,9 +3,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.agnes.projectmanager.mappers.UserMapper;
 import com.agnes.projectmanager.models.user.*;
-import com.agnes.projectmanager.repositories.UserRepository;
-import com.agnes.projectmanager.validators.UserMapper;;
+import com.agnes.projectmanager.repositories.UserRepository;;
 
 
 @Service
