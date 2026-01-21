@@ -8,7 +8,7 @@ public class ProjectValidator {
     public static void validate(ProjectDTO project){
 
         if(project.startDate().isAfter(project.finalDate())){
-            throw new ProjectNotValidException("A data de inicio não pode ser depois da data final");
+            throw new ProjectNotValidException("The start date cannot be after the end date.");
         }
 
         

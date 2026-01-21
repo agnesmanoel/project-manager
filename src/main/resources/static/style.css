@@ -45,8 +45,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-items: center;
-
+    justify-content: center;
+    flex-grow: 1;
+    font-size: xx-large;
 }
 
 .card{
@@ -82,7 +83,7 @@ body {
     padding: 12px;
     padding-bottom: 20px;
     width: 500px;
-    height: 550px;
+    height: 540px;
     background-color: #9B36DF; 
     border-radius: 8px;
 

@@ -10,22 +10,22 @@ public class UserValidator {
     public static void validate(UserDTO userDTO){
 
         if(userDTO.userName() == null || userDTO.userName().equals("")){
-            throw new UserNotValidException("Campo nome do usário vazio");
+            throw new UserNotValidException("User name field is empty");
          }
 
          
          if(userDTO.userNumber() == null || userDTO.userNumber().equals("")){
-            throw new UserNotValidException("Campo número do usuário vazio");
+            throw new UserNotValidException("User number field is empty");
          }
 
 
          if(userDTO.userBirthDate() == null){
-            throw new UserNotValidException("Campo data do usúario vazio");
+            throw new UserNotValidException("User birth date field is empty");
 
          }
 
          if(!userDTO.userHasAgreed()){
-            throw new UserNotValidException("Usuário deve concordar em se cadastrar");
+            throw new UserNotValidException("User must agree to register");
          }
 
 
