@@ -8,11 +8,11 @@
 		<version>4.0.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.agnes</groupId>
-	<artifactId>projectmanager</artifactId>
+	<groupId>com.teste</groupId>
+	<artifactId>API</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>projectmanager</name>
-	<description>Project Management System</description>
+	<name>API</name>
+	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -30,24 +30,38 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
+	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webmvc</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
+        	<groupId>org.xerial</groupId>
+        	<artifactId>sqlite-jdbc</artifactId>
+        	<version>3.45.1.0</version>
+    	</dependency>
+
+		<dependency>
+      		<groupId>org.springframework.boot</groupId>
+      		<artifactId>spring-boot-starter-data-jpa</artifactId>
+    	</dependency>
+		
+		<dependency>
+    		<groupId>org.hibernate.orm</groupId>
+    		<artifactId>hibernate-community-dialects</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa-test</artifactId>
-			<scope>test</scope>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
