@@ -5,7 +5,6 @@ const selection = document.getElementById("userResponsibleSelection")
 
 async function saveProject(event) {
 
-    event.preventDefault();
     const formData = new FormData(projectForms);
     const data = Object.fromEntries(formData.entries());
     
@@ -25,7 +24,11 @@ async function saveProject(event) {
             } else {
                 alert("Cannot save project. Check the input fields.")
             }
+        } else{
+            alert("Project saved with success :D")
         }
+
+        
 }
 
  

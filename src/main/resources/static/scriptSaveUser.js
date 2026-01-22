@@ -4,7 +4,6 @@ const userForms = document.querySelector("#formsUser");
 
 async function saveUser(event) {
 
-    event.preventDefault(); 
     const formData = new FormData(userForms);
 
     const data = Object.fromEntries(formData.entries());
@@ -24,7 +23,13 @@ async function saveUser(event) {
             } else {
                 alert("Cannot save user. Check the input fields.")
             }
+        } else {
+            alert("User saved with success :D")
+
         }
+
+        
+        
 }
 
 
