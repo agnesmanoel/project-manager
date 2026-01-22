@@ -24,6 +24,13 @@ cd project-manager
 mvn process-resources spring-boot:run
 
 ```
+* Caso não de certo, rode dentro da pasta do projeto o comando:
+  ```
+  mvn clean install
+  mvn spring-boot:run
+  ```
+* E depois entre no link: http://localhost:8080
+  
 
 ## Estrutura das pastas
 A estrutura de pastas segue o padrão de apps Spring, organizada em camadas e com separação clara de responsabilidades.
